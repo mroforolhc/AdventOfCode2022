@@ -29,12 +29,14 @@ def main():
                 path = '/'.join(currentPath[:i + 1])
                 mem[path] = mem.get(path, 0) + int(lineParts[0])
 
-    sum = 0
-    for value in mem.values():
-        if (value <= 100000):
-            sum += value
+    sortMem = list(mem.values())
+    sortMem.sort()
 
-    return sum
+    needDel = 30000000 - (70000000 - mem[''])
+
+    for value in sortMem:
+        if (needDel <= value):
+            return value
 
 if __name__ == "__main__":
     print(main())
